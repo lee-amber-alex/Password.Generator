@@ -5,7 +5,7 @@ var generatePassword = function () {
   var hsuppChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
   var charLength = prompt(
-    "Welcome to Password Generator! How many characters would you like your password to contain?"
+    "Welcome to Password Generator! How many characters would you like your password to contain? Please proived a number between 8 and 128."
   );
 
   // validate character length.
