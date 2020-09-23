@@ -1,31 +1,28 @@
 var generatePassword = function () {
-  
-    hsspecialChar = ["@", "#", "$", "%", "^", "&", "*","<",">","?","/","{","}","[","]","|","=","+","-","_","`","~"];
-    hsnumChar = ["1","2", "3", "4", "5", "6", "7", "8", "9", "0"];
-    hslowChar = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-    hsuppChar = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-  // var allChar2 ="@#$%^&*1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  
+  var hsspecialChar = "@ #$%^&*<>?/}]|+-_~";
+  var hsnumChar = "1234567890";
+  var hslowChar = "abcdefghijklmnopqrstuvwxyz";
+  var hsuppChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-  var charLength = prompt("Welcome to Password Generator! How many characters would you like your password to contain?");
+  var charLength = prompt(
+    "Welcome to Password Generator! How many characters would you like your password to contain?"
+  );
 
   // validate character length.
   if (isNaN(charLength)) {
     alert("Please restart and provide a number.");
-    return
-
+    return;
   } else if (charLength >= 128) {
     alert("Please restart and provide a number less than 128.");
-    return
-
+    return;
   } else if (charLength < 8) {
     alert("Please restart and provide a number greater than 8.");
-    return
+    return;
   }
   var specialChar = confirm(
     "If you would like to include special characters(#@$%&*^!), click 'ok'."
   );
- 
+
   var numChar = confirm(
     "If you would like to include numeric characters, click 'ok'."
   );
@@ -33,108 +30,39 @@ var generatePassword = function () {
   var lowChar = confirm(
     "If you would like to include lowercase characters, click 'ok'."
   );
-  
+
   var uppChar = confirm(
     "If you would like to include uppercase characters, click 'ok'."
   );
 
- var charPool = []; 
+  var charPool = "";
 
-//  All Characters
- if(specialChar, numChar, lowChar , uppChar){
-  charPool.push(toString(hsspecialChar, hsnumChar, hslowChar, hsuppChar));
-  console.log(charPool);
-} 
+  if (specialChar) {
+    charPool = charPool.concat(hsspecialChar);
+  }
+  if (numChar) {
+    charPool = charPool.concat(hsnumChar);
+  }
+  if (lowChar) {
+    charPool = charPool.concat(hslowChar);
+  }
 
-// Special, Lowercase, Uppercase
-  else if(specialChar, lowChar , uppChar){
-   charPool.push(hsspecialChar , hslowChar , hsuppChar);
-    console.log(charPool);
-  } 
-  console.log (Math.floor(Math.random() * charLength.length));
+  if (uppChar) {
+    charPool = charPool.concat(hsuppChar);
+  }
 
-//   // Special, Uppercase
-  if(specialChar, uppChar){
-    charPool.push(hsspecialChar , hsuppChar);
-    console.log(charPool);
-  } 
-  console.log (Math.floor(Math.random() * charLength.length));
+  var charArray = charPool.split("");
 
-//   // Special, Lowercase
-  if(specialChar, lowChar){
-    charPool.push(hsspecialChar , hslowChar );
-    console.log(charPool);
-  } 
-  console.log (Math.floor(Math.random() * charLength.length));
+  var password = "";
 
-//   // Special, Numeric
-  if(specialChar, numChar){
-    charPool.push(hsspecialChar , hsnumChar);
-    console.log(charPool);
-  } 
-  console.log (Math.floor(Math.random() * charLength.length));
+  for (let i = 0; i < charLength; i++) {
+    var randomChar = charArray[Math.floor(Math.random() * charArray.length)];
 
-//   // Special
-  if(specialChar){
-    charPool.push(hsspecialChar);
-    console.log(charPool);
-  } 
-  console.log (Math.floor(Math.random() * charLength.length));
+    password = password.concat(randomChar);
+  }
 
-//   // Numeric, Lowercase, Uppercase
-  if(numChar, lowChar , uppChar){
-    charPool.push(hsnumChar , hslowChar , hsuppChar);
-    console.log(charPool);
-  } 
-  console.log (Math.floor(Math.random() * charLength.length));
-
-//   // Numeric, Uppercase
-  if(numChar, uppChar){
-    charPool.push(hsnumChar , hsuppChar);
-    console.log(charPool);
-  } 
-  console.log (Math.floor(Math.random() * charLength.length));
-
-//   // Numeric, Lowercase
-  if(numChar, lowChar){
-    charPool.push(hsnumChar , hslowChar);
-    console.log(charPool);
-  } 
-  console.log (Math.floor(Math.random() * charLength.length));
-
-//   // Numeric
-  if(numChar){
-    charPool.push(hsnumChar);
-    console.log(charPool);
-  } 
-  console.log (Math.floor(Math.random() * charLength.length));
-
-//   // Lowercase, Uppercase
-  if(lowChar , uppChar){
-    charPool.push(hslowChar , hsuppChar);
-    console.log(charPool);
-  } 
-  console.log (Math.floor(Math.random() * charLength.length));
-
-//   // Lowercase
-  if(lowChar){
-    charPool.push(hslowChar);
-    console.log(charPool);
-  } 
-  console.log (Math.floor(Math.random() * charLength.length));
-
-//   // Uppercase
-  if(uppChar){
-    charPool.push(hsuppChar);
-    console.log(charPool);
-  } 
-  console.log (Math.floor(Math.random() * charLength.length));
-
-//   console.log(charPool);
-}
-
-
-
+  return password;
+};
 
 ///////////////////////////////////////////////////////////////////////
 // PASSWORD GENERATOR
