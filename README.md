@@ -38,6 +38,10 @@ Project Repository can be accessed [here.](https://github.com/lee-amber-alex/Pas
 
 ![Randomly Generated Password](screenshots/password.png)  
 
+### Credits  
+
+Background images obtained from [freepik](http://www.freepik.com).
+
 ### Contact Me  
  
 Amber Alex Lee
