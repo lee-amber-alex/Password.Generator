@@ -1,7 +1,7 @@
 # Password.Generator
 
 ## Descritpion
-For this exercise I created an application that generates a unique password based on the User requested specifications.  The User has the option to include special characters, numeric characters, lowercase characters and/or uppercase characters.  After criteria is satisfied, the Password Generator provides the User with a randomly generated password.  Technologies used include HTML, CSS, JavaScript, Bootstrap and Google Fonts. 
+For this exercise I created an application that generates a unique password based on the User requested specifications.  The User has the option to include special characters, numeric characters, lowercase characters and/or uppercase characters.  After criteria is satisfied, the Password Generator provides the User with a randomly generated password.  Technologies used include HTML, CSS, JavaScript, Bootstrap and Google Fonts.  
 
 ## Installation
 
