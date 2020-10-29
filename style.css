@@ -22,12 +22,12 @@ body {
 }
 
 #h1Back{
-  background-color:rgba(255, 255, 255, 0.863);
+  background-color:#af0808e3;
   border: 2px solid black;
   padding: 10px;
-  color: black;
+  color: white;
   font-size: 50px;
-  text-shadow: 1px 1px 4px gray;
+  text-shadow: 1px 1px 4px black;
  margin-left: 20% !important;
  margin-right: 20% !important;
 }
