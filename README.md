@@ -12,7 +12,6 @@ For this exercise I created an application that generates a unique password base
  
 * [Installation](#installation)
 * [Usage](#usage)
-* [Credits](#credits)
 * [License](#license)
  
 ## Installation
